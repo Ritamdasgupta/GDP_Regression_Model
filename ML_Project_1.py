@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 #X_train1 has (L,K) pairs for every yr from 1980-89, Y_train1 contains GDP values of corresponding yrs.
 #Similarly X_train2 has (L,K) data for the next decade, and so on.
 #X_train and Y_train contain (L,K) and GDP data over 1980-2020, a concatenation of the 4 previous arrays for overall analysis.
-X_train1=np.array([[283562,4589560],[290516,4771087],[297754,4957352],[304367,5159054],[308533,5369912],[313020,5585743],[317881,5828080],[323182,6093647],
+'''X_train1=np.array([[283562,4589560],[290516,4771087],[297754,4957352],[304367,5159054],[308533,5369912],[313020,5585743],[317881,5828080],[323182,6093647],
                  [330291,6379517],[338167,6701041]]
                  )
 Y_train1=np.array([1413932, 1495736, 1542855, 1673434, 1739479, 1808887, 1886876, 1954569, 2170751, 2302276])
@@ -82,15 +82,27 @@ X1_final=K1_log-L1_log
 X2_final=K2_log-L2_log
 X3_final=K3_log-L3_log
 X4_final=K4_log-L4_log
-X_final=K_log-L_log
+X_final=K_log-L_log'''
 #Model class implementing linear regression.
 class Model:
     def __init__(self,X,Y, alpha, lambda_):
-        self.X,self.xmean,self.xsd=self.feature_scaling(X)
-        self.Y,self.ymean,self.ysd=self.feature_scaling(Y)
+        self.X,self.Y=self.input_transformation(X,Y)
+        self.X,self.xmean,self.xsd=self.feature_scaling(self.X)
+        self.Y,self.ymean,self.ysd=self.feature_scaling(self.Y)
         self.w,self.b=self.gradient_descent(self.X,self.Y,alpha,lambda_)
+    def input_transformation(self,X,Y):
+        Y=np.log(Y)
+        K=np.zeros(len(X))
+        L=np.zeros(len(X))
+        for i in range(len(X)):
+            K[i]=X[i][1]
+            L[i]=X[i][0]
+        K=np.log(K)
+        L=np.log(L)
+        return K-L, Y-L
  
-#feature scaling using Z-score normalization to facilitate more efficient gradient descent. 
+#feature scaling using Z-score normalization to facilitate more efficient gradient descent.
+    
     def feature_scaling(self,L):
         M=np.zeros(len(L))
         mean=sum(L)/len(L)
@@ -146,5 +158,6 @@ class Model:
         print("TFP value obtained over given data is:",np.exp(self.ymean+self.b*self.ysd-self.w*self.xmean*(self.ysd/self.xsd)))
     def print_alpha(self):
         print("Value of capital share(alpha) over given data is:", self.w*(self.ysd/self.xsd))
+
 
 
