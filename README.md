@@ -29,4 +29,5 @@ Next, the cost-function `J()` has been implemented. It is this mean-square cost 
 A helper function, `partial_diff()` has been defined to calculate the partial derivative values at given $w$ and $b$. This will be useful for the gradient descent algorithm.
 
 Finally, `gradient_descent()` has been implemented to optimize the values of parameters $w$ and $b$ on the scaled data, so as to minimize the cost function. We are running 100000 iterations of gradient descent, which appears to be sufficient, as demonstrated by the learning curve on X_train and Y_train:
+
 ![Learning Curve flattens by about 2000 iterations of gradient_descent](l_c.png)
