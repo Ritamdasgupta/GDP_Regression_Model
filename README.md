@@ -60,3 +60,19 @@ On X_train2 and Y_train2:
 
 | ![plot2](plot2.png) |
 | :--: |
+
+On X_train3 and Y_train3 we have:
+
+
+| ![plot3](plot3.png) |
+| :--: |
+
+On X_train4 and Y_train4 the plot looks like:
+
+| ![plot4](plot4.png) |
+| :--: |
+
+And finally, on the combined dataset over 40 years, we have:
+
+| ![plot5](plot5.png) |
+| :--: |
