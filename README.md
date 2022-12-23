@@ -38,7 +38,11 @@ Finally, `gradient_descent()` has been implemented to optimize the values of par
 1. `plot_model()`: This plots the best fit line as found by the algorithm against a scatter plot of $\ln(K/L)$ along the x-axis and corresponding $\ln(Y/L)$ along the y-axis.
 2. `make_prediction(K,L)`: Predicts GDP, given input capital K and labour L, according to the regression line.
 3. `print_TFP()` and `print_alpha()` print TFP and $\alpha$ values respectively.
+
 It should be noted that the regression line is plotted on the scaled data, thus the values from the plot cannot be directly used by `make_prediction()`, `print_alpha()` and `print_TFP()`.
 
-The conversion is done as follows:
-$$\frac{\ln\left(\frac{Y}{L}\right)-\mu_y}{\sigma_y}=w\left(\frac{\ln\left(\frac{Y}{L}\right)-\mu_k}{\sigma_k}\right)+b$$
+The conversion is done as shown below. The regression line is given by:
+$$\frac{\ln\left(\frac{Y}{L}\right)-\mu_y}{\sigma_y}=w\left(\frac{\ln\left(\frac{K}{L}\right)-\mu_k}{\sigma_k}\right)+b$$
+
+Simplifying  by multplying both sides with $\sigma_y$, we get:
+$$\ln\left(\frac{Y}{L}\right)=\left(\frac{w\sigma_y}{\sigma_k}\right)\ln\left(\frac{K}{L}\right)+\left(\mu_y+b\sigma_y-\left(\frac{w\mu_k\sigma_y}{\sigma_k}\right)\right)$$
