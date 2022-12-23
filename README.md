@@ -46,3 +46,6 @@ $$\frac{\ln\left(\frac{Y}{L}\right)-\mu_y}{\sigma_y}=w\left(\frac{\ln\left(\frac
 
 Simplifying  by multplying both sides with $\sigma_y$, we get:
 $$\ln\left(\frac{Y}{L}\right)=\left(\frac{w\sigma_y}{\sigma_k}\right)\ln\left(\frac{K}{L}\right)+\left(\mu_y+b\sigma_y-\left(\frac{w\mu_k\sigma_y}{\sigma_k}\right)\right)$$
+Comparing with the log form of the Cobb-Douglas equation we derived earlier, we find $$\alpha=\left(\frac{w\sigma_y}{\sigma_k}\right)$$ and $$\ln(A)=\left(\mu_y+b\sigma_y-\left(\frac{w\mu_k\sigma_y}{\sigma_k}\right)\right)$$.
+
+Now, since $w,b,\mu_y,\sigma_y,\mu_k,\sigma_k$ are all known quantities of the model, we can find the values of $A$ and $\alpha$ and, substituting in the Cobb-Douglas equation predict GDP.
