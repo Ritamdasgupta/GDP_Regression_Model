@@ -32,4 +32,4 @@ Finally, `gradient_descent()` has been implemented to optimize the values of par
 
 | ![Learning Curve](l_c.png) |
 | :--: |
-| *Learning Curve flattens by about 2000 iterations of gradient_descent* |
+| Learning Curve flattens by around 2000 iterations of gradient descent |
