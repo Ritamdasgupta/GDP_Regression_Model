@@ -19,7 +19,7 @@ Thus, setting $\ln\left(\frac{K}{L}\right)$ as the *feature* and $\ln\left(\frac
 # Description of the Model
 A class Model has been defined, utilising OOP architecture for the model. Raw input is given in the form of two numpy arrays, X and Y, where X is the input array consisting of (L,K) pairs and Y is the output array containing the corresponding GDP. These would be used to train the regression model. In the code, data taken from an [official RBI source](https://www.rbi.org.in/Scripts/KLEMS.aspx) has been provided (commented out). X_train represents data from 1980-2020, Y_train is corresponding GDP. The data is also separately provided for each decade in 4 different arrays, along with corresponding GDPs. 
 
-The `input_transformation()` function has been used to transform the X and Y arrays into $\ln(Y/L)$ and $\ln(K/L)$ arrays so that linear regression can be directly applied upon them. 
+The `input_transformation()` function has been used to transform the X and Y arrays into $\ln\left(\frac{Y}{L}\right)$ and $\ln\left(\frac{K}{L}\right)$ arrays so that linear regression can be directly applied upon them. 
 
 Upon these processed input and output arrays, *feature scaling* has been performed using Z-score normalization so that the gradient descent algorithm runs faster.
 This has been done using the `feature_scaling()` function.
@@ -54,4 +54,9 @@ Now, since $w,b,\mu_y,\sigma_y,\mu_k,\sigma_k$ are all known quantities of the m
 The plot shown by `plot_model()` on the first training set X_train1 and Y_train1 is as shown:
 
 | ![plot1](plot1.png) |
+| :--: |
+
+On X_train2 and Y_train2:
+
+| ![plot2](plot2.png) |
 | :--: |
