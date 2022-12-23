@@ -79,4 +79,4 @@ And finally, on the combined dataset over 40 years, we have:
 
 We note that for all 4 decades as well as the combined dataset, linear regression produces a good fit, which demonstrates the validity of the Cobb-Douglas production function. Over 40 years, it appears that TFP value=0.412 whereas $\alpha=0.931$, as can be calculated by calling the `print_TFP()` and `print_alpha()` functions. Since linear regression produces a good fit, the `make_prediction()` function gives reasonably accurate predictions of GDP, as can be seen by the reader.
 
-Thus, the model designed using linear regression accomplishes the envisioned purposes.
+Thus, the model designed using linear regression accomplishes the envisioned purposes, and is a realistic model of the Indian economy.
