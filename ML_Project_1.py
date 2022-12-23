@@ -63,11 +63,11 @@ class Model:
     def gradient_descent(self,X,Y,alpha,lambda_):
         ws=0
         bs=0
-        
+        self.cost=[]
         for i in range(100000):
             dj_dw,dj_db=self.partial_diff(ws,bs,X,Y,lambda_)
             ws,bs=ws-alpha*dj_dw, bs-alpha*dj_db
-        
+            self.cost.append(self.J(ws,bs,X,Y,0))
         return ws,bs
     #User Interface functions
     def plot_model(self):
@@ -81,6 +81,11 @@ class Model:
         print("TFP value obtained over given data is:",np.exp(self.ymean+self.b*self.ysd-self.w*self.xmean*(self.ysd/self.xsd)))
     def print_alpha(self):
         print("Value of capital share(alpha) over given data is:", self.w*(self.ysd/self.xsd))
+    #def learning_curve(self):
+        #num_iter=np.arange(1,100001)
+       
+        #plt.plot(num_iter, self.cost)
+        #plt.show()
 
 #_main_
 #Loading raw input data from https://www.rbi.org.in/Scripts/KLEMS.aspx into numpy arrays.
