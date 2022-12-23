@@ -17,7 +17,7 @@ Rearranging, we obtain,
 $$\ln\left(\frac{Y}{L}\right)=\alpha\ln\left(\frac{K}{L}\right)+\ln(A)$$
 Thus, setting $\ln\left(\frac{K}{L}\right)$ as the *feature* and $\ln\left(\frac{Y}{L}\right)$ as the *target* value converts our problem into the one-dimensional linear regression form, $y=wx+b$, where $w$ represents $\alpha$ and $b$ represents $\ln(A)$. We now are ready to design a model to find these values.
 # Description of the Model
-Raw input is given in the form of two numpy arrays, X and Y, where X is the input array consisting of (L,K) pairs and Y is the output array containing the corresponding GDP. These would be used to train the regression model. In the code, data taken from an [official RBI source](https://www.rbi.org.in/Scripts/KLEMS.aspx) has been provided (commented out). X_train represents data from 1980-2020, Y_train is corresponding GDP. The data is also separately provided for each decade in 4 different arrays, along with corresponding GDPs. 
+A class Model has been defined, utilising OOP architecture for the model. Raw input is given in the form of two numpy arrays, X and Y, where X is the input array consisting of (L,K) pairs and Y is the output array containing the corresponding GDP. These would be used to train the regression model. In the code, data taken from an [official RBI source](https://www.rbi.org.in/Scripts/KLEMS.aspx) has been provided (commented out). X_train represents data from 1980-2020, Y_train is corresponding GDP. The data is also separately provided for each decade in 4 different arrays, along with corresponding GDPs. 
 
 The `input_transformation()` function has been used to transform the X and Y arrays into $\ln(Y/L)$ and $\ln(K/L)$ arrays so that linear regression can be directly applied upon them. 
 
@@ -49,3 +49,5 @@ $$\ln\left(\frac{Y}{L}\right)=\left(\frac{w\sigma_y}{\sigma_k}\right)\ln\left(\f
 Comparing with the log form of the Cobb-Douglas equation we derived earlier, we find $$\alpha=\left(\frac{w\sigma_y}{\sigma_k}\right)$$ and $$\ln(A)=\left(\mu_y+b\sigma_y-\left(\frac{w\mu_k\sigma_y}{\sigma_k}\right)\right)$$.
 
 Now, since $w,b,\mu_y,\sigma_y,\mu_k,\sigma_k$ are all known quantities of the model, we can find the values of $A$ and $\alpha$ and, substituting in the Cobb-Douglas equation predict GDP.
+
+# Results
