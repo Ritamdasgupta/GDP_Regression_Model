@@ -30,5 +30,5 @@ A helper function, `partial_diff()` has been defined to calculate the partial de
 
 Finally, `gradient_descent()` has been implemented to optimize the values of parameters $w$ and $b$ on the scaled data, so as to minimize the cost function. We are running 100000 iterations of gradient descent, even though 10000 would have been sufficient, as demonstrated by the learning curve on X_train and Y_train:
 
-![Learning Curve](l_c.png)
-*Learning Curve flattens by about 2000 iterations of gradient_descent*
+|![Learning Curve](l_c.png)|
+|*Learning Curve flattens by about 2000 iterations of gradient_descent*|
