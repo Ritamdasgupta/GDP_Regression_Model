@@ -28,8 +28,17 @@ Next, the cost-function `J()` has been implemented. It is this mean-square cost 
 
 A helper function, `partial_diff()` has been defined to calculate the partial derivative values at given $w$ and $b$. This will be useful for the gradient descent algorithm.
 
-Finally, `gradient_descent()` has been implemented to optimize the values of parameters $w$ and $b$ on the scaled data, so as to minimize the cost function. We are running 100000 iterations of gradient descent, even though 10000 would have been sufficient, as demonstrated by the learning curve on X_train and Y_train:
+Finally, `gradient_descent()` has been implemented to optimize the values of parameters $w$ and $b$ on the scaled data, so as to minimize the cost function. We are running 100000 iterations of gradient descent, even though 10000 would have been sufficient, as demonstrated by the learning curve on X_train and Y_train, plotting cost function on Y-axis and number of iterations on X-axis:
 
 | ![Learning Curve](l_c.png) |
 | :--: |
-| Learning Curve flattens by around 2000 iterations of gradient descent |
+| Learning curve flattens by around 2000 iterations of gradient descent |
+
+4 functions have been provided for user interaction with the model:
+1. `plot_model()`: This plots the best fit line as found by the algorithm against a scatter plot of $\ln(K/L)$ along the x-axis and corresponding $\ln(Y/L)$ along the y-axis.
+2. `make_prediction(K,L)`: Predicts GDP, given input capital K and labour L, according to the regression line.
+3. `print_TFP()` and `print_alpha()` print TFP and $\alpha$ values respectively.
+It should be noted that the regression line is plotted on the scaled data, thus the values from the plot cannot be directly used by `make_prediction()`, `print_alpha()` and `print_TFP()`.
+
+The conversion is done as follows:
+$$\frac{\ln\left(\frac{Y}{L}\right)-\mu_y}{\sigma_y}=w\left(\frac{\ln\left(\frac{Y}{L}\right)-\mu_k}{\sigma_k}\right)+b$$
