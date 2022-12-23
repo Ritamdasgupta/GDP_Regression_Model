@@ -51,3 +51,7 @@ Comparing with the log form of the Cobb-Douglas equation we derived earlier, we 
 Now, since $w,b,\mu_y,\sigma_y,\mu_k,\sigma_k$ are all known quantities of the model, we can find the values of $A$ and $\alpha$ and, substituting in the Cobb-Douglas equation predict GDP.
 
 # Results
+The plot shown by `plot_model()` on the first training set X_train1 and Y_train1 is as shown:
+
+| ![plot1](plot1.png) |
+| :--: |
